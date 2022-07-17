@@ -1,5 +1,4 @@
 module "eks" {
-  # source                      = "git::https://github.com/bsp-dx/tfmodule-aws-eks.git"
   source                        = "../../"
 
   context                       = var.context

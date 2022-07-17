@@ -4,7 +4,7 @@
 ```hcl
 module "simple-eks" {
 
-  source                      = "git::https://github.com/bsp-dx/tfmodule-aws-eks.git"
+  source                      = "https://github.com/nuax79/tfmodule-aws-vpc.git"
 
   project                       = var.project
   env_name                      = var.env_name

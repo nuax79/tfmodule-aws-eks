@@ -9,15 +9,15 @@ Simple EKS 를 구성 합니다.
 
 [AWS Profile 구성 예시](https://docs.aws.amazon.com/ko_kr/cli/latest/userguide/cli-configure-files.html)
 ```
-aws configure --profile dxterra
+aws configure --profile test-profile
 
 AWS Access Key ID [None]: *********
 AWS Secret Access Key [None]: *******
 Default region name [None]: ap-northeast-2
 Default output format [None]: json
 
-export AWS_DEFAULT_PROFILE=dxterra
-export AWS_PROFILE=dxterra
+export AWS_DEFAULT_PROFILE=test-profile
+export AWS_PROFILE=test
 export AWS_REGION=ap-northeast-2
 ```
 
@@ -43,16 +43,16 @@ variable "context" {
 # terraform.tfvars 파일의 context 상수 선언 예시
 context = {
     aws_credentials_file    = "$HOME/.aws/credentials"
-    aws_profile             = "dxterra"
+    aws_profile             = "test"
     aws_region              = "ap-northeast-2"
     region_alias            = "an2"
     
     project                 = "simple"
     environment             = "Testbed"
     env_alias               = "t"
-    owner                   = "devdataopsx_bgk@bespinglobal.com"
+    owner                   = "test@bespinglobal.com"
     team_name               = "Devops Transformation"
-    team                    = "DX"
+    team                    = "test"
     cost_center             = "20080718"
     domain                  = "devapp.shop"
     pri_domain              = "toolchain"
@@ -63,7 +63,7 @@ context = {
 테라폼 모듈을 통해 EKS 클러스터를 신속하게 구성합니다.
 
 ```shell
-git clone https://github.com/bsp-dx/tfmodule-aws-eks.git
+git clone https://github.com/nuax79/tfmodule-aws-vpc.git
 cd tfmodule-aws-eks/examples/simple
 
 terraform init
@@ -81,7 +81,7 @@ terraform destroy
 kubernetes 리소스를 kubectl API 를 통해 확인 할 수 있습니다.
 
 ```shell
-export AWS_PROFILE=dxterra
+export AWS_PROFILE=test
 aws eks update-kubeconfig --name simple-an2t-eks
 
 kubectl get namespace

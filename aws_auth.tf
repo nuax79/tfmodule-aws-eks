@@ -25,7 +25,7 @@ resource "kubernetes_config_map" "aws_auth" {
     namespace = "kube-system"
     labels = merge(
       {
-        "app.kubernetes.io/managed-by" = "DX-Toolchain"
+        "app.kubernetes.io/managed-by" = "Toolchain"
         "app.kubernetes.io/component" = "AWS-Auth"
         "app.kubernetes.io/version" = "1.0.0"
         "terraform.io/module" = "terraform-aws-modules.eks.aws"

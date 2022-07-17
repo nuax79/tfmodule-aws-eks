@@ -1,6 +1,5 @@
 # DEFINE Launch_Template
 module "launch_template" {
-  source  = "git::https://github.com/bsp-dx/tfmodule-aws-launch-template.git"
 
   context = var.context
   security_group_ids    = [ module.eks.worker_security_group_id ]
