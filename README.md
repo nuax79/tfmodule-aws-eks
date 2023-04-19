@@ -121,3 +121,6 @@ kubectl get po -A
 kubectl get gateway, svc, deploy -A
 ```
  
+
+
+
